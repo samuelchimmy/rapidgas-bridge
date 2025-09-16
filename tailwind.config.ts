@@ -57,6 +57,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // RapidGas custom colors
+        "sketch-border": "hsl(var(--sketch-border))",
+        "paper-white": "hsl(var(--paper-white))",
+        "ink-black": "hsl(var(--ink-black))",
+      },
+      fontFamily: {
+        handwritten: ['Kalam', 'cursive'],
       },
       borderRadius: {
         lg: "var(--radius)",
