@@ -93,28 +93,27 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  /* Added height: 100% to ensure animation works consistently */
   html, body {
     height: 100%;
   }
 
   body {
     @apply bg-background text-foreground font-handwritten;
-    position: relative; /* Required for positioning the animation */
-    overflow: hidden; /* Hides the plane when it's off-screen */
+    position: relative;
+    /* THIS IS THE FIX: Only hide horizontal overflow, allowing vertical scrolling */
+    overflow-x: hidden;
   }
 
   /* Animated background plane */
   body::before {
     content: '';
     position: absolute;
-    width: 150px; /* Adjust size of the plane if needed */
-    height: 150px; /* Adjust size of the plane if needed */
+    width: 150px;
+    height: 150px;
     background-image: url('/bg.svg');
     background-size: contain;
     background-repeat: no-repeat;
     z-index: -1;
-    /* Animation is now faster (8s) and has no delay, so it starts immediately */
     animation: fly-across 8s ease-out forwards;
   }
 }
@@ -193,4 +192,71 @@ All colors MUST be HSL.
   100% {
     transform: translate(100vw, -150px) rotate(15deg);
   }
-}
+}```
+
+---
+
+### 2. File: `src/pages/Index.tsx` (Layout and Font Size Fixed)
+
+This code makes the hero title smaller on mobile and allows the page to flow naturally, making the footer scrollable.
+
+**Action:** Replace the entire content of `src/pages/Index.tsx` with this code.
+
+```tsx
+import RhinoFiWidget from "@/components/RhinoFiWidget";
+
+const Index = () => {
+  return (
+    <div className="min-h-screen bg-paper-white flex flex-col">
+      {/* Header with Logo + Text */}
+      <header className="p-4 md:p-6 fade-in">
+        <div className="flex items-center justify-start gap-x-2">
+          <img
+            src="/RapidGas.webp"
+            alt="RapidGas Logo"
+            className="h-8 md:h-9"
+          />
+          <h1 className="text-xl md:text-2xl font-medium font-handwritten text-ink-black">
+            RapidGas
+          </h1>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="text-center px-4 py-6 sm:py-8 fade-in-delay">
+        {/* THIS IS THE FIX: Font size is now smaller on mobile (text-xl) */}
+        <h2 className="text-xl sm:text-2xl font-bold font-handwritten text-ink-black mb-4">
+          ⚡ RapidGas — Gas Bridge
+        </h2>
+        <p className="text-base text-muted-foreground max-w-xl mx-auto">
+          Swap, bridge, and top up your gas fees instantly across blockchains with RapidGas, a lightning-fast and secure interop solution.
+        </p>
+      </section>
+
+      {/* Main Content - Widget */}
+      {/* THIS IS THE FIX: Removed 'flex-1' to allow natural page flow and scrolling */}
+      <main className="flex justify-center px-4 fade-in-delay-long">
+        <div className="w-full max-w-md">
+          <RhinoFiWidget className="mx-auto" />
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="py-4 md:pt-6 md:pb-8 text-center fade-in-delay-long">
+        <p className="text-sm font-handwritten text-muted-foreground">
+          ⚡ RapidGas — By{" "}
+          <a
+            href="https://www.0xnotes.lol/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink-black hover:underline transition-all duration-200"
+          >
+            Jadeofwallstreet
+          </a>
+        </p>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
