@@ -40,7 +40,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-4 md:pt-6 md:pb-8 text-center fade-in-delay-long">
         <p className="text-sm font-handwritten text-muted-foreground">
-          ⚡ RapidGas — By{" "}
+          ⚡ Built With ❤️ — By{" "}
           <a
             href="https://www.0xnotes.lol/"
             target="_blank"
