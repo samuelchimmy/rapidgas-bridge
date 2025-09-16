@@ -7,8 +7,7 @@ const RhinoFiWidget = ({ className = "" }: RhinoFiWidgetProps) => {
 
   const theme = {
     colors: {
-      // THIS IS THE FIX #1: The widget's internal background is now transparent.
-      widgetBackground: 'transparent',
+      widgetBackground: '#FFFFFF',
       primary: '#000000',
       primaryLight: '#222222',
       select: '#F5F5F5',
@@ -28,11 +27,19 @@ const RhinoFiWidget = ({ className = "" }: RhinoFiWidgetProps) => {
   const widgetUrl = `https://widget.rhino.fi/?apiKey=${apiKey}&theme=${encodedTheme}`;
   
   return (
+    // Your original sketch-border container is preserved.
     <div className={`sketch-border relative ${className}`}>
-      <div className="w-full h-[460px] sm:h-[540px] rounded-lg overflow-hidden relative z-10">
+      {/* 
+        FIX: This is the new container that will clip the iframe.
+        - It is shorter than the iframe itself (e.g., h-[460px] vs the iframe's 500px).
+        - 'overflow-hidden' clips whatever part of the iframe sticks out.
+        - 'rounded-lg' ensures the clipped corners look clean.
+      */}
+      <div className="w-full h-[480px] sm:h-[530px] rounded-lg overflow-hidden relative z-10">
         <iframe
           src={widgetUrl}
-          // THIS IS THE FIX #2: Removed 'bg-background' so the iframe element itself is transparent.
+          // The iframe is now intentionally taller than its container.
+          // Its bottom part, containing the footer, will be hidden.
           className="w-full h-[500px] sm:h-[581px] border-none"
           scrolling="no"
           title="RhinoFi Bridge Widget"
