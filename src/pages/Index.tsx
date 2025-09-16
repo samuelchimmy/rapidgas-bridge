@@ -3,13 +3,13 @@ import RhinoFiWidget from "@/components/RhinoFiWidget";
 const Index = () => {
   return (
     <div className="min-h-screen bg-paper-white flex flex-col">
-      {/* Header with Logo + Text */}
-      <header className="p-6 fade-in">
+      {/* Header with Logo + Text - Reduced padding on mobile */}
+      <header className="p-4 md:p-6 fade-in">
         <div className="flex items-center justify-start gap-x-2">
           <img
             src="/RapidGas.webp"
             alt="RapidGas Logo"
-            className="h-8 md:h-10"
+            className="h-8 md:h-9" // Slightly adjusted size for balance
           />
           <h1 className="text-xl md:text-2xl font-medium font-handwritten text-ink-black">
             RapidGas
@@ -17,12 +17,12 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="text-center px-4 pt-8 pb-12 fade-in-delay">
-        <h2 className="text-3xl md:text-4xl font-bold font-handwritten text-ink-black mb-4">
+      {/* Hero Section - Updated text, responsive title, and reduced padding */}
+      <section className="text-center px-4 py-6 sm:py-8 fade-in-delay">
+        <h2 className="text-2xl sm:text-3xl font-bold font-handwritten text-ink-black mb-4">
           ⚡ RapidGas — Gas Bridge
         </h2>
-        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-base text-muted-foreground max-w-xl mx-auto">
           Swap, bridge, and top up your gas fees instantly across blockchains with RapidGas, a lightning-fast and secure interop solution.
         </p>
       </section>
@@ -34,8 +34,8 @@ const Index = () => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="pb-8 pt-6 text-center fade-in-delay-long">
+      {/* Footer - Reduced padding on mobile */}
+      <footer className="py-4 md:pt-6 md:pb-8 text-center fade-in-delay-long">
         <p className="text-sm font-handwritten text-muted-foreground">
           ⚡ RapidGas — By{" "}
           <a
