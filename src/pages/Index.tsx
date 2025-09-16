@@ -20,7 +20,15 @@ const Index = () => {
       {/* Footer */}
       <footer className="pb-8 pt-6 text-center fade-in-delay-long">
         <p className="text-sm font-handwritten text-muted-foreground">
-          ⚡ RapidGas — Powered by RhinoFi
+          ⚡ RapidGas — Built With ❤️ By{" "}
+          <a 
+            href="https://www.0xnotes.lol/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-ink-black hover:underline transition-all duration-200"
+          >
+            Jadeofwallstreet
+          </a>
         </p>
       </footer>
     </div>
