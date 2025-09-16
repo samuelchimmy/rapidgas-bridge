@@ -93,6 +93,11 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  /* Added height: 100% to ensure animation works consistently */
+  html, body {
+    height: 100%;
+  }
+
   body {
     @apply bg-background text-foreground font-handwritten;
     position: relative; /* Required for positioning the animation */
@@ -109,8 +114,8 @@ All colors MUST be HSL.
     background-size: contain;
     background-repeat: no-repeat;
     z-index: -1;
-    animation: fly-across 12s ease-out forwards;
-    animation-delay: 0.5s; /* Small delay before starting */
+    /* Animation is now faster (8s) and has no delay, so it starts immediately */
+    animation: fly-across 8s ease-out forwards;
   }
 }
 
