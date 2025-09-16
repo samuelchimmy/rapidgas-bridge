@@ -35,7 +35,7 @@ const RhinoFiWidget = ({ className = "" }: RhinoFiWidgetProps) => {
         - 'overflow-hidden' clips whatever part of the iframe sticks out.
         - 'rounded-lg' ensures the clipped corners look clean.
       */}
-      <div className="w-full h-[460px] sm:h-[540px] rounded-lg overflow-hidden relative z-10">
+      <div className="w-full h-[470px] sm:h-[530px] rounded-lg overflow-hidden relative z-10">
         <iframe
           src={widgetUrl}
           // The iframe is now intentionally taller than its container.
