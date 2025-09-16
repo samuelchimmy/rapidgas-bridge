@@ -4,8 +4,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-paper-white flex flex-col">
       {/* Header with Logo */}
-      <header className="pt-8 pb-6 text-center fade-in">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-handwritten text-ink-black">
+      <header className="p-6 fade-in">
+        <h1 className="text-xl md:text-2xl font-medium font-handwritten text-ink-black">
           RapidGas
         </h1>
       </header>
