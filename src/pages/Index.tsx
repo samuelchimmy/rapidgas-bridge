@@ -6,7 +6,8 @@ const Index = () => {
       {/* Header with Logo + Text */}
       <header className="p-6 fade-in">
         {/* Flex container to align logo and text side-by-side */}
-        <div className="flex items-center justify-start gap-x-3">
+        {/* The gap has been reduced from gap-x-3 to gap-x-2 for a tighter fit */}
+        <div className="flex items-center justify-start gap-x-2">
           <img
             src="/RapidGas.webp"
             alt="RapidGas Logo"
