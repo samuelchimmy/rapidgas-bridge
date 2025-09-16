@@ -23,7 +23,7 @@ const Index = () => {
           ⚡ RapidGas — The Fastest Crypto Gas Bridge
         </h2>
         <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-          Swap, bridge, and top up your gas fees instantly across blockchains with RapidGas, a lightning-fast and secure solution powered by RhinoFi. Designed for simplicity, speed, and reliability, RapidGas makes cross-chain transactions seamless. No delays, no complexity — just pure efficiency.
+          Swap, bridge, and top up your gas fees instantly across blockchains with RapidGas, a lightning-fast and secure interop solution. RapidGas makes cross-chain transactions seamless. No delays, no complexity — just pure efficiency.
         </p>
       </section>
 
