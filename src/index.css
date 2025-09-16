@@ -95,7 +95,22 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-handwritten;
-    overflow-x: hidden;
+    position: relative; /* Required for positioning the animation */
+    overflow: hidden; /* Hides the plane when it's off-screen */
+  }
+
+  /* Animated background plane */
+  body::before {
+    content: '';
+    position: absolute;
+    width: 150px; /* Adjust size of the plane if needed */
+    height: 150px; /* Adjust size of the plane if needed */
+    background-image: url('/bg.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    animation: fly-across 12s ease-out forwards;
+    animation-delay: 0.5s; /* Small delay before starting */
   }
 }
 
@@ -162,5 +177,15 @@ All colors MUST be HSL.
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Keyframes for the plane animation */
+@keyframes fly-across {
+  0% {
+    transform: translate(-150px, 100vh) rotate(-20deg);
+  }
+  100% {
+    transform: translate(100vw, -150px) rotate(15deg);
   }
 }
