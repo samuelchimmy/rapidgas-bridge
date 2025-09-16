@@ -20,7 +20,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="text-center px-4 pt-8 pb-12 fade-in-delay">
         <h2 className="text-3xl md:text-4xl font-bold font-handwritten text-ink-black mb-4">
-          ⚡ RapidGas — The Fastest Crypto Gas Bridge
+          ⚡ RapidGas — Gas Bridge
         </h2>
         <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
           Swap, bridge, and top up your gas fees instantly across blockchains with RapidGas, a lightning-fast and secure interop solution. RapidGas makes cross-chain transactions seamless. No delays, no complexity — just pure efficiency.
